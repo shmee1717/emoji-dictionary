@@ -42,6 +42,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //emojis[indexPath.row] returns the emoji clicked in tableview into internal notes
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let emoji = emojis[indexPath.row]
+        //No longer highlights the previously selected row after clicking back button
+        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "moveSegue", sender: emoji)
     }
     

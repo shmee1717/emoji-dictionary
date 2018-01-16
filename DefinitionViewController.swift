@@ -12,6 +12,9 @@ class DefinitionViewController: UIViewController {
     
     var emoji = "No Emoji"
 
+    //Links text label
+    @IBOutlet weak var definitionLabel: UILabel!
+    
     //Links the definition page to the DefinitionViewController
     @IBOutlet weak var emojiLabel: UILabel!
     
@@ -23,6 +26,38 @@ class DefinitionViewController: UIViewController {
         
         //Returns the clicked emoji into the definition page
         emojiLabel.text = emoji
+        
+        if emoji == "🐶" {
+            definitionLabel.text = "A cute dog"
+        }
+        if emoji == "🐱" {
+            definitionLabel.text = "A cute cat"
+        }
+        if emoji == "🐭" {
+            definitionLabel.text = "A cute mouse"
+        }
+        if emoji == "🐹" {
+            definitionLabel.text = "A cute hamster"
+        }
+        if emoji == "🐰" {
+            definitionLabel.text = "A cute rabbit"
+        }
+        if emoji == "🦊" {
+            definitionLabel.text = "A cute fox"
+        }
+        if emoji == "🐻" {
+            definitionLabel.text = "A cute bear"
+        }
+        if emoji == "🐼" {
+            definitionLabel.text = "A cute panda"
+        }
+        if emoji == "🐨" {
+            definitionLabel.text = "A cute koala"
+        }
+        if emoji == "🐯" {
+            definitionLabel.text = "A cute tiger"
+        }
+        
         
     }
 
