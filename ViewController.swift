@@ -12,7 +12,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     
-    var emoji = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯"]
+    var emojis = ["🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +25,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //code determines how many rows there are.
     //count determined by the number of items in the array.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return emoji.count
+        return emojis.count
         
     }
     
@@ -33,16 +33,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print(indexPath.row)
         let cell = UITableViewCell()
-        cell.textLabel?.text = emoji[indexPath.row]
+        cell.textLabel?.text = emojis[indexPath.row]
         return cell
     }
     
     //segue allows tableview emojis to be clicked and transition to the definition page
-    //main.storyboard -> embed navigation bar = adds a back button to the tableview emoji screen 
+    //main.storyboard -> embed navigation bar = adds a back button to the tableview emoji screen
+    //emojis[indexPath.row] returns the emoji clicked in tableview into internal notes
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "moveSegue", sender: "🌂")
+        let emoji = emojis[indexPath.row]
+        performSegue(withIdentifier: "moveSegue", sender: emoji)
+    }
+    
+    //print(sender) returns item from tableview identifier
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print(sender)
         
     }
+    
+    
+    
     
     
     
