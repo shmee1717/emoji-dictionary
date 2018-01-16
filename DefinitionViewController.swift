@@ -9,11 +9,21 @@
 import UIKit
 
 class DefinitionViewController: UIViewController {
+    
+    var emoji = "No Emoji"
+
+    //Links the definition page to the DefinitionViewController
+    @IBOutlet weak var emojiLabel: UILabel!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        
+        //Returns the clicked emoji into the definition page
+        emojiLabel.text = emoji
+        
     }
 
     override func didReceiveMemoryWarning() {

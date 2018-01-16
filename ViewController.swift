@@ -46,14 +46,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     //print(sender) returns item from tableview identifier
+    //created constant "defVC"
+    //"defVC.emoji = sender as! String" returns clicked on emoji into code notes
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(sender)
+        let defVC = segue.destination as! DefinitionViewController
+        defVC.emoji = sender as! String
         
     }
-    
-    
-    
-    
     
     
     override func didReceiveMemoryWarning() {
