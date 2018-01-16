@@ -37,6 +37,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return cell
     }
     
+    //segue allows tableview emojis to be clicked and transition to the definition page
+    //main.storyboard -> embed navigation bar = adds a back button to the tableview emoji screen 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveSegue", sender: "🌂")
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
